@@ -1,0 +1,42 @@
+Abaixo deguem as alterações realizadas para deixar o programa funcionando: \/
+
+Arquivo Estacionamento.cs:
+
+1- Adição da lista veiculos para armazenar as placas dos veículos.
+2- Modificação nos métodos AdicionarVeiculo, RemoverVeiculo e ListarVeiculos para trabalhar com a lista de veículos.
+
+
+// ...
+private List<string> veiculos;  // Lista para armazenar as placas dos veículos
+private decimal precoInicial;
+private decimal precoPorHora;
+
+// ...
+
+// Dentro do construtor
+veiculos = new List<string>();
+
+// ...
+
+// Método AdicionarVeiculo
+public void AdicionarVeiculo()
+{
+    Console.WriteLine("Digite a placa do veículo:");
+    string placa = Console.ReadLine();
+
+    // Aqui você pode fazer a validação da placa ou outras verificações necessárias
+    // Exemplo: verificar se a placa já está na lista
+    if (!veiculos.Contains(placa))
+    {
+        veiculos.Add(placa);
+        Console.WriteLine("Veículo cadastrado com sucesso!");
+    }
+    else
+    {
+        Console.WriteLine("Veículo com esta placa já cadastrado.");
+    }
+}
+
+// Métodos RemoverVeiculo e ListarVeiculos permanecem sem alterações
+
+// ...
